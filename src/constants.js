@@ -64,4 +64,4 @@ export const articleData = [
 
 ]
 
-export const API_KEY = "p49CBNa0ej7Grx5UYdGu97dJTVGmVljTt7g8l5Eh"
+export const API_KEY = "GATEWAY_API_KEY"
