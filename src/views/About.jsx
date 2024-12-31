@@ -36,7 +36,7 @@ const About = () => {
       fromYear: "Jul 2019",
       toYear: "Jun 2022",
       degreeName: "B.Voc Specialization in IoT",
-      university: "Dayalbagh Education Institute",
+      university: "Dayalbagh Educational Institute",
       // description: ""
     }
   ]
