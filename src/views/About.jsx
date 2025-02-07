@@ -45,7 +45,7 @@ const About = () => {
     {
       fromYear: "Aug 2024",
       toYear: "Aug 2027",
-      certificateName: "Solutions Architect Associate (SAA-02)",
+      certificateName: "Solutions Architect Associate",
       organization: "Amazon Web Services (AWS)",
       credentials: "https://www.credly.com/badges/0b10aa6a-c7b4-4258-aacf-c7d69da736ed",
       // description: ""
@@ -84,7 +84,7 @@ const About = () => {
                   : "mt-4 text-xl text-justify text-white"
               }
             >
-              Adil Ansari is a highly motivated DevOps Engineer and a <strong>AWS Certified Solutions Architect Associate (SAA-02)</strong> and <strong>Red Hat Certified System Administrator (RHCSA)</strong>. He brings expertise in building and managing cloud infrastructure across AWS and Azure, with a focus on automation, security, and optimization. His accomplishments at IGT Solutions include dramatically reducing deployment times (80%), improving application uptime (up to 20%), and cutting AWS costs (12%). Adil is a collaborative team player, a mentor, and a dedicated problem-solver who is passionate about leveraging technology to drive positive results.
+              Adil Ansari is a highly motivated DevOps Engineer and a <strong>AWS Certified Solutions Architect Associate</strong> and <strong>Red Hat Certified System Administrator (RHCSA)</strong>. He brings expertise in building and managing cloud infrastructure across AWS and Azure, with a focus on automation, security, and optimization. His accomplishments at IGT Solutions include dramatically reducing deployment times (80%), improving application uptime (up to 20%), and cutting AWS costs (12%). Adil is a collaborative team player, a mentor, and a dedicated problem-solver who is passionate about leveraging technology to drive positive results.
             </p>
           </motion.div>
 
