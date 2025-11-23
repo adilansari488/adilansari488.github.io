@@ -60,10 +60,19 @@ const About = () => {
     }
   ]
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
     <div id="about" className={darkMode === true ? "bg-white" : "bg-gray-900"}>
       <div className="max-w-7xl mx-auto x-4 sm:px-6 lg:px-8 px-4 md:mt-0 pt-24 pb-12">
-        <h2
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className={
             darkMode
               ? "text-5xl font-bold px-4 md:px-0 text-center"
@@ -71,9 +80,14 @@ const About = () => {
           }
         >
           About Me
-        </h2>
+        </motion.h2>
         <div>
-          <motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={cardVariants}
+          >
             <h4 className="mt-12 text-3xl font-semibold text-blue-500">
               A Bit About Me
             </h4>
@@ -88,7 +102,12 @@ const About = () => {
             </p>
           </motion.div>
 
-          <motion.div>
+          <motion.div
+             initial="hidden"
+             whileInView="visible"
+             viewport={{ once: true }}
+             variants={cardVariants}
+          >
             <h4 className="mt-12 text-3xl font-semibold text-blue-500">
               Professional Experience
             </h4>
@@ -97,9 +116,16 @@ const About = () => {
               <div className="absolute left-4 top-0 h-full border-l-2 border-blue-500"></div>
 
               {professionalExperience.map((experience, index) => (
-                <div key={index} className="mb-12 pl-12 relative">
+                <motion.div
+                  key={index}
+                  className="mb-12 pl-12 relative"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                >
                   {/* Timeline Marker */}
-                  <div className="absolute -left-2 top-1 w-4 h-4 bg-blue-500 rounded-full"></div>
+                  <div className="absolute -left-2 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900"></div>
 
                   {/* Year Range */}
                   <div className="text-left text-blue-500 font-semibold text-lg mb-2">
@@ -112,14 +138,19 @@ const About = () => {
                       {experience.role}
                     </h5>
                     <p className="text-md font-semibold italic">{experience.company}</p>
-                    <p className="text-md mt-2 text-justify w-1/2">{experience.description}</p>
+                    <p className="text-md mt-2 text-justify w-full md:w-3/4">{experience.description}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
-          <motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={cardVariants}
+          >
             <h4 className="mt-12 text-3xl font-semibold text-blue-500">
               Education
             </h4>
@@ -128,9 +159,16 @@ const About = () => {
               <div className="absolute left-4 top-0 h-full border-l-2 border-blue-500"></div>
 
               {education.map((degree, index) => (
-                <div key={index} className="mb-12 pl-12 relative">
+                <motion.div
+                  key={index}
+                  className="mb-12 pl-12 relative"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                >
                   {/* Timeline Marker */}
-                  <div className="absolute -left-2 top-1 w-4 h-4 bg-blue-500 rounded-full"></div>
+                  <div className="absolute -left-2 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900"></div>
 
                   {/* Year Range */}
                   <div className="text-left text-blue-500 font-semibold text-lg mb-2">
@@ -143,14 +181,19 @@ const About = () => {
                       {degree.degreeName}
                     </h5>
                     <p className="text-md font-semibold italic">{degree.university}</p>
-                    <p className="text-md mt-2 text-justify w-1/2">{degree.description}</p>
+                    <p className="text-md mt-2 text-justify w-full md:w-3/4">{degree.description}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
-          <motion.div>
+          <motion.div
+             initial="hidden"
+             whileInView="visible"
+             viewport={{ once: true }}
+             variants={cardVariants}
+          >
             <h4 className="mt-12 text-3xl font-semibold text-blue-500">
               Certifications
             </h4>
@@ -159,9 +202,16 @@ const About = () => {
               <div className="absolute left-4 top-0 h-full border-l-2 border-blue-500"></div>
 
               {certifications.map((certification, index) => (
-                <div key={index} className="mb-12 pl-12 relative">
+                <motion.div
+                  key={index}
+                  className="mb-12 pl-12 relative"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                >
                   {/* Timeline Marker */}
-                  <div className="absolute -left-2 top-1 w-4 h-4 bg-blue-500 rounded-full"></div>
+                  <div className="absolute -left-2 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900"></div>
 
                   {/* Year Range */}
                   <div className="text-left text-blue-500 font-semibold text-lg mb-2">
@@ -171,17 +221,22 @@ const About = () => {
                   {/* Role, Company, and Description */}
                   <div className={darkMode ? "text-gray-600" : "text-gray-300"}>
                     <h5 className={darkMode ? "text-xl font-semibold" : "text-xl font-semibold text-white"}>
-                      {certification.certificateName} <a className="text-blue-500 text-base" href={certification.credentials} target="_blank" rel="noreferrer">(verify)</a>
+                      {certification.certificateName} <a className="text-blue-500 text-base hover:underline" href={certification.credentials} target="_blank" rel="noreferrer">(verify)</a>
                     </h5>
                     <p className="text-md font-semibold italic">{certification.organization}</p>
                     {/* <p className="text-md mt-2 text-justify w-1/2">{certification.description}</p> */}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
-          <motion.div>
+          <motion.div
+             initial="hidden"
+             whileInView="visible"
+             viewport={{ once: true }}
+             variants={cardVariants}
+          >
             <h4 className="mt-12 text-3xl font-semibold text-blue-500">
               Tools and Technologies
             </h4>
@@ -196,26 +251,29 @@ const About = () => {
             </p>
           </motion.div>
 
-          <motion.div className="flex flex-wrap mt-8 flex flex-wrap justify-between ">
+          <motion.div className="flex flex-wrap mt-8 justify-center md:justify-start">
             {techStack.map((el, index) => (
               <motion.div
                 key={index}
                 initial="hidden"
                 whileInView={"visible"}
+                viewport={{ once: true }}
                 variants={{
                   visible: {
                     y: 0,
                     opacity: 1,
                     transition: {
                       type: "spring",
+                      stiffness: 100,
+                      delay: index * 0.05
                     },
                   },
-                  hidden: { opacity: 1, y: 80 },
+                  hidden: { opacity: 0, y: 50 },
                 }}
-                className="py-2 px-4 bg-gray-50 md:m-4 mx-2 mt-6 rounded-lg flex items-center hover:scale-125 cursor-pointer md:w-48 w-40"
+                className="py-4 px-4 bg-gray-50 md:m-4 mx-2 mt-6 rounded-lg flex items-center hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer md:w-48 w-40 border border-gray-200"
               >
-                <img alt="" src={el.link} className="w-12" />
-                <h4 className="text-md ml-4">{el.name}</h4>
+                <img alt={el.name} src={el.link} className="w-12 h-12 object-contain" />
+                <h4 className="text-md ml-4 font-medium text-gray-800">{el.name}</h4>
               </motion.div>
             ))}
           </motion.div>
