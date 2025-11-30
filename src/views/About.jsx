@@ -1,12 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { techStack } from "../constants";
-import { ThemeContext } from "../themeProvider";
 import { motion } from "framer-motion";
 
 const About = () => {
-  const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
-
   const professionalExperience = [
     {
       fromYear: "Aug 2023",
@@ -60,224 +56,148 @@ const About = () => {
     }
   ]
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
+  const SectionTitle = ({ children }) => (
+    <h3 className="text-3xl font-display font-semibold text-premium-gold mb-8 uppercase tracking-wider">
+      {children}
+    </h3>
+  );
 
   return (
-    <div id="about" className={darkMode === true ? "bg-white" : "bg-gray-900"}>
-      <div className="max-w-7xl mx-auto x-4 sm:px-6 lg:px-8 px-4 md:mt-0 pt-24 pb-12">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className={
-            darkMode
-              ? "text-5xl font-bold px-4 md:px-0 text-center"
-              : "text-5xl font-bold px-4 md:px-0 text-center text-white"
-          }
-        >
-          About Me
-        </motion.h2>
+    <div id="about" className="bg-premium-charcoal text-premium-silver py-20 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
+
+        {/* Header */}
+        <div className="mb-20 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-5xl md:text-7xl font-serif font-bold text-white mb-6"
+          >
+            About Me
+          </motion.h2>
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: "100px" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="h-1 bg-premium-gold mx-auto"
+          />
+        </div>
+
+        {/* Bio */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
+            <div className="md:col-span-4 relative">
+                <div className="w-full h-full bg-premium-slate/30 rounded-lg border border-white/5 p-8 flex items-center justify-center">
+                     <span className="font-display text-9xl text-premium-gold/10 font-bold absolute top-4 left-4">"</span>
+                     <p className="text-2xl font-serif text-white italic text-center z-10">
+                        Building the future of cloud infrastructure, one container at a time.
+                     </p>
+                </div>
+            </div>
+            <div className="md:col-span-8">
+                <SectionTitle>My Story</SectionTitle>
+                <p className="text-lg leading-relaxed text-premium-silver/80 mb-6">
+                    Adil Ansari is a highly motivated DevOps Engineer and a <strong>AWS Certified Solutions Architect Associate</strong> and <strong>Red Hat Certified System Administrator (RHCSA)</strong>. He brings expertise in building and managing cloud infrastructure across AWS and Azure, with a focus on automation, security, and optimization.
+                </p>
+                <p className="text-lg leading-relaxed text-premium-silver/80">
+                     His accomplishments at IGT Solutions include dramatically reducing deployment times (80%), improving application uptime (up to 20%), and cutting AWS costs (12%). Adil is a collaborative team player, a mentor, and a dedicated problem-solver who is passionate about leveraging technology to drive positive results.
+                </p>
+            </div>
+        </div>
+
+        {/* Experience */}
+        <div className="mb-24">
+            <SectionTitle>Professional Experience</SectionTitle>
+            <div className="border-l border-white/10 ml-4 md:ml-0 space-y-16">
+                {professionalExperience.map((exp, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                        className="relative pl-12 md:pl-16"
+                    >
+                        <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 bg-premium-gold rounded-full ring-4 ring-premium-black" />
+                        <span className="text-premium-gold font-mono text-sm mb-2 block">{exp.fromYear} — {exp.toYear}</span>
+                        <h4 className="text-2xl font-serif text-white mb-1">{exp.role}</h4>
+                        <h5 className="text-xl text-premium-silver/60 mb-4">{exp.company}</h5>
+                        <p className="text-premium-silver/70 max-w-3xl leading-relaxed">{exp.description}</p>
+                    </motion.div>
+                ))}
+            </div>
+        </div>
+
+        {/* Two Column Layout for Education & Certs */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+            <div>
+                <SectionTitle>Education</SectionTitle>
+                <div className="border-l border-white/10 space-y-12">
+                     {education.map((edu, index) => (
+                        <div key={index} className="relative pl-12">
+                             <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 bg-premium-silver rounded-full ring-4 ring-premium-black" />
+                             <span className="text-premium-gold font-mono text-sm mb-2 block">{edu.fromYear} — {edu.toYear}</span>
+                             <h4 className="text-xl font-serif text-white mb-1">{edu.degreeName}</h4>
+                             <p className="text-premium-silver/60">{edu.university}</p>
+                        </div>
+                     ))}
+                </div>
+            </div>
+             <div>
+                <SectionTitle>Certifications</SectionTitle>
+                <div className="space-y-6">
+                     {certifications.map((cert, index) => (
+                        <a
+                            key={index}
+                            href={cert.credentials}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="block group bg-white/5 hover:bg-white/10 border border-white/5 hover:border-premium-gold/30 p-6 rounded-lg transition-all duration-300"
+                        >
+                             <div className="flex justify-between items-start">
+                                <div>
+                                    <h4 className="text-lg font-semibold text-white group-hover:text-premium-gold transition-colors">{cert.certificateName}</h4>
+                                    <p className="text-sm text-premium-silver/60 mt-1">{cert.organization}</p>
+                                </div>
+                                <span className="text-xs font-mono text-premium-silver/40">{cert.fromYear} — {cert.toYear}</span>
+                             </div>
+                        </a>
+                     ))}
+                </div>
+            </div>
+        </div>
+
+        {/* Tech Stack */}
         <div>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={cardVariants}
-          >
-            <h4 className="mt-12 text-3xl font-semibold text-blue-500">
-              A Bit About Me
-            </h4>
-            <p
-              className={
-                darkMode
-                  ? "mt-4 text-xl text-justify text-gray-500"
-                  : "mt-4 text-xl text-justify text-white"
-              }
-            >
-              Adil Ansari is a highly motivated DevOps Engineer and a <strong>AWS Certified Solutions Architect Associate</strong> and <strong>Red Hat Certified System Administrator (RHCSA)</strong>. He brings expertise in building and managing cloud infrastructure across AWS and Azure, with a focus on automation, security, and optimization. His accomplishments at IGT Solutions include dramatically reducing deployment times (80%), improving application uptime (up to 20%), and cutting AWS costs (12%). Adil is a collaborative team player, a mentor, and a dedicated problem-solver who is passionate about leveraging technology to drive positive results.
-            </p>
-          </motion.div>
-
-          <motion.div
-             initial="hidden"
-             whileInView="visible"
-             viewport={{ once: true }}
-             variants={cardVariants}
-          >
-            <h4 className="mt-12 text-3xl font-semibold text-blue-500">
-              Professional Experience
-            </h4>
-            <div className="mt-8 flex flex-col relative">
-              {/* Vertical line */}
-              <div className="absolute left-4 top-0 h-full border-l-2 border-blue-500"></div>
-
-              {professionalExperience.map((experience, index) => (
-                <motion.div
-                  key={index}
-                  className="mb-12 pl-12 relative"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                >
-                  {/* Timeline Marker */}
-                  <div className="absolute -left-2 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900"></div>
-
-                  {/* Year Range */}
-                  <div className="text-left text-blue-500 font-semibold text-lg mb-2">
-                    {experience.fromYear} - {experience.toYear}
-                  </div>
-
-                  {/* Role, Company, and Description */}
-                  <div className={darkMode ? "text-gray-600" : "text-gray-300"}>
-                    <h5 className={darkMode ? "text-xl font-semibold" : "text-xl font-semibold text-white"}>
-                      {experience.role}
-                    </h5>
-                    <p className="text-md font-semibold italic">{experience.company}</p>
-                    <p className="text-md mt-2 text-justify w-full md:w-3/4">{experience.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={cardVariants}
-          >
-            <h4 className="mt-12 text-3xl font-semibold text-blue-500">
-              Education
-            </h4>
-            <div className="mt-8 flex flex-col relative">
-              {/* Vertical line */}
-              <div className="absolute left-4 top-0 h-full border-l-2 border-blue-500"></div>
-
-              {education.map((degree, index) => (
-                <motion.div
-                  key={index}
-                  className="mb-12 pl-12 relative"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                >
-                  {/* Timeline Marker */}
-                  <div className="absolute -left-2 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900"></div>
-
-                  {/* Year Range */}
-                  <div className="text-left text-blue-500 font-semibold text-lg mb-2">
-                    {degree.fromYear} - {degree.toYear}
-                  </div>
-
-                  {/* Role, Company, and Description */}
-                  <div className={darkMode ? "text-gray-600" : "text-gray-300"}>
-                    <h5 className={darkMode ? "text-xl font-semibold" : "text-xl font-semibold text-white"}>
-                      {degree.degreeName}
-                    </h5>
-                    <p className="text-md font-semibold italic">{degree.university}</p>
-                    <p className="text-md mt-2 text-justify w-full md:w-3/4">{degree.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-             initial="hidden"
-             whileInView="visible"
-             viewport={{ once: true }}
-             variants={cardVariants}
-          >
-            <h4 className="mt-12 text-3xl font-semibold text-blue-500">
-              Certifications
-            </h4>
-            <div className="mt-8 flex flex-col relative">
-              {/* Vertical line */}
-              <div className="absolute left-4 top-0 h-full border-l-2 border-blue-500"></div>
-
-              {certifications.map((certification, index) => (
-                <motion.div
-                  key={index}
-                  className="mb-12 pl-12 relative"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                >
-                  {/* Timeline Marker */}
-                  <div className="absolute -left-2 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900"></div>
-
-                  {/* Year Range */}
-                  <div className="text-left text-blue-500 font-semibold text-lg mb-2">
-                    {certification.fromYear} - {certification.toYear}
-                  </div>
-
-                  {/* Role, Company, and Description */}
-                  <div className={darkMode ? "text-gray-600" : "text-gray-300"}>
-                    <h5 className={darkMode ? "text-xl font-semibold" : "text-xl font-semibold text-white"}>
-                      {certification.certificateName} <a className="text-blue-500 text-base hover:underline" href={certification.credentials} target="_blank" rel="noreferrer">(verify)</a>
-                    </h5>
-                    <p className="text-md font-semibold italic">{certification.organization}</p>
-                    {/* <p className="text-md mt-2 text-justify w-1/2">{certification.description}</p> */}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-             initial="hidden"
-             whileInView="visible"
-             viewport={{ once: true }}
-             variants={cardVariants}
-          >
-            <h4 className="mt-12 text-3xl font-semibold text-blue-500">
-              Tools and Technologies
-            </h4>
-            <p
-              className={
-                darkMode
-                  ? "mt-4 text-xl text-justify text-gray-500"
-                  : "mt-4 text-xl text-justify text-white"
-              }
-            >
-              I use a combination of cutting-edge technology and new age tools.
-            </p>
-          </motion.div>
-
-          <motion.div className="flex flex-wrap mt-8 justify-center md:justify-start">
-            {techStack.map((el, index) => (
-              <motion.div
-                key={index}
+            <SectionTitle>Tools & Technologies</SectionTitle>
+             <motion.div
+                className="flex flex-wrap gap-4"
                 initial="hidden"
-                whileInView={"visible"}
+                whileInView="visible"
                 viewport={{ once: true }}
                 variants={{
-                  visible: {
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      type: "spring",
-                      stiffness: 100,
-                      delay: index * 0.05
-                    },
-                  },
-                  hidden: { opacity: 0, y: 50 },
+                    visible: { transition: { staggerChildren: 0.05 } }
                 }}
-                className="py-4 px-4 bg-gray-50 md:m-4 mx-2 mt-6 rounded-lg flex items-center hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer md:w-48 w-40 border border-gray-200"
-              >
-                <img alt={el.name} src={el.link} className="w-12 h-12 object-contain" />
-                <h4 className="text-md ml-4 font-medium text-gray-800">{el.name}</h4>
-              </motion.div>
-            ))}
-          </motion.div>
+             >
+                {techStack.map((tech, index) => (
+                    <motion.div
+                        key={index}
+                        variants={{
+                            hidden: { opacity: 0, scale: 0.8 },
+                            visible: { opacity: 1, scale: 1 }
+                        }}
+                        whileHover={{ y: -5, borderColor: 'rgba(212, 175, 55, 0.5)' }}
+                        className="bg-premium-black border border-white/10 rounded-full px-6 py-3 flex items-center space-x-3 cursor-default transition-colors duration-300"
+                    >
+                        <img src={tech.link} alt={tech.name} className="w-6 h-6 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                        <span className="text-sm font-medium text-premium-silver">{tech.name}</span>
+                    </motion.div>
+                ))}
+             </motion.div>
         </div>
+
       </div>
     </div>
   );

@@ -11,15 +11,13 @@ import { ThemeProvider } from "./themeProvider";
 function App() {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000)
+    setTimeout(() => setLoading(false), 1500)
   }, [])
 
   return (
     <ThemeProvider>
-      <>
-
         {!loading ? (
-          <div >
+          <div className="bg-premium-black min-h-screen text-premium-silver">
             <Navbar />
             <Home />
             <About />
@@ -27,13 +25,10 @@ function App() {
             <Projects />
             <Contact />
           </div>
-
         ) : (
           <LoadingScreen />
         )}
-      </>
     </ThemeProvider>
-
   );
 }
 

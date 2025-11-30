@@ -4,41 +4,71 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#0a0a0a" />
     <meta
-    name="description"
-    content="Web site created using create-react-app"
+      name="description"
+      content="Adil Ansari - Premium Portfolio"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class', // Enable class-based dark mode (though we might force dark for premium feel)
         theme: {
           extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              serif: ['"Playfair Display"', 'serif'],
+              display: ['"Cinzel"', 'serif'],
+            },
             colors: {
-              clifford: '#da373d',
+              premium: {
+                black: '#050505',
+                charcoal: '#0a0a0a',
+                slate: '#1a1a1a',
+                gold: '#d4af37',
+                'gold-dim': '#a68a2e',
+                silver: '#e0e0e0',
+                'silver-dim': '#a0a0a0',
+                accent: '#3b82f6', // Keeping blue as a subtle tech accent
+              }
+            },
+            backgroundImage: {
+              'luxury-gradient': 'linear-gradient(to right bottom, #050505, #0a0a0a, #111111)',
+              'gold-gradient': 'linear-gradient(to right, #d4af37, #f3e5ab, #d4af37)',
             }
           }
         }
       }
     </script>
-    <title>Adil Ansari</title>
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d4af37;
+      }
+    </style>
+    <title>Adil Ansari | Cloud & DevOps</title>
   </head>
-  <body>
+  <body class="bg-premium-black text-premium-silver antialiased selection:bg-premium-gold selection:text-black">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
