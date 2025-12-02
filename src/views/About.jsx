@@ -37,9 +37,8 @@ const About = () => {
       toYear: "Jun 2022",
       degreeName: "B.Voc Specialization in IoT",
       university: "Dayalbagh Educational Institute",
-      // description: ""
     }
-  ]
+  ];
 
   const certifications = [
     {
@@ -48,7 +47,6 @@ const About = () => {
       certificateName: "Solutions Architect Associate",
       organization: "Amazon Web Services (AWS)",
       credentials: "https://www.credly.com/badges/0b10aa6a-c7b4-4258-aacf-c7d69da736ed",
-      // description: ""
     },
     {
       fromYear: "Dec 2023",
@@ -56,131 +54,175 @@ const About = () => {
       certificateName: "Red Hat Certified System Administrator (RHCSA-v9)",
       organization: "Red Hat",
       credentials: "https://rhtapps.redhat.com/verify?certId=230-271-777",
-      // description: ""
     }
-  ]
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const timelineVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+  };
 
   return (
-    <div id="about" className={darkMode === true ? "bg-white" : "bg-gray-900"}>
-      <div className="max-w-7xl mx-auto x-4 sm:px-6 lg:px-8 px-4 md:mt-0 pt-24 pb-12">
-        <h2
-          className={
-            darkMode
-              ? "text-5xl font-bold px-4 md:px-0 text-center"
-              : "text-5xl font-bold px-4 md:px-0 text-center text-white"
-          }
+    <div id="about" className={darkMode ? "bg-white transition-colors duration-300" : "bg-gray-900 transition-colors duration-300"}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:mt-0 pt-24 pb-12">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
         >
-          About Me
-        </h2>
+            <h2
+            className={
+                darkMode
+                ? "text-5xl font-bold px-4 md:px-0 text-center text-gray-900"
+                : "text-5xl font-bold px-4 md:px-0 text-center text-white"
+            }
+            >
+            About Me
+            </h2>
+        </motion.div>
+
         <div>
-          <motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <h4 className="mt-12 text-3xl font-semibold text-blue-500">
               A Bit About Me
             </h4>
             <p
               className={
                 darkMode
-                  ? "mt-4 text-xl text-justify text-gray-500"
-                  : "mt-4 text-xl text-justify text-white"
+                  ? "mt-4 text-xl text-justify text-gray-600 leading-relaxed"
+                  : "mt-4 text-xl text-justify text-gray-300 leading-relaxed"
               }
             >
               Adil Ansari is a highly motivated DevOps Engineer and a <strong>AWS Certified Solutions Architect Associate</strong> and <strong>Red Hat Certified System Administrator (RHCSA)</strong>. He brings expertise in building and managing cloud infrastructure across AWS and Azure, with a focus on automation, security, and optimization. His accomplishments at IGT Solutions include dramatically reducing deployment times (80%), improving application uptime (up to 20%), and cutting AWS costs (12%). Adil is a collaborative team player, a mentor, and a dedicated problem-solver who is passionate about leveraging technology to drive positive results.
             </p>
           </motion.div>
 
-          <motion.div>
+          {/* Experience Section */}
+          <motion.div
+             initial="hidden"
+             whileInView="visible"
+             viewport={{ once: true }}
+             variants={containerVariants}
+          >
             <h4 className="mt-12 text-3xl font-semibold text-blue-500">
               Professional Experience
             </h4>
-            <div className="mt-8 flex flex-col relative">
-              {/* Vertical line */}
-              <div className="absolute left-4 top-0 h-full border-l-2 border-blue-500"></div>
-
+            <div className="mt-8 flex flex-col relative border-l-2 border-blue-500 ml-4 md:ml-6">
               {professionalExperience.map((experience, index) => (
-                <div key={index} className="mb-12 pl-12 relative">
+                <motion.div
+                    key={index}
+                    className="mb-12 pl-8 md:pl-12 relative"
+                    variants={timelineVariants}
+                >
                   {/* Timeline Marker */}
-                  <div className="absolute -left-2 top-1 w-4 h-4 bg-blue-500 rounded-full"></div>
+                  <div className="absolute -left-[9px] top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900"></div>
 
-                  {/* Year Range */}
-                  <div className="text-left text-blue-500 font-semibold text-lg mb-2">
-                    {experience.fromYear} - {experience.toYear}
-                  </div>
-
-                  {/* Role, Company, and Description */}
-                  <div className={darkMode ? "text-gray-600" : "text-gray-300"}>
-                    <h5 className={darkMode ? "text-xl font-semibold" : "text-xl font-semibold text-white"}>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                     <h5 className={darkMode ? "text-xl font-bold text-gray-800" : "text-xl font-bold text-white"}>
                       {experience.role}
                     </h5>
-                    <p className="text-md font-semibold italic">{experience.company}</p>
-                    <p className="text-md mt-2 text-justify w-1/2">{experience.description}</p>
+                    <div className="text-blue-500 font-semibold text-md">
+                        {experience.fromYear} - {experience.toYear}
+                    </div>
                   </div>
-                </div>
+
+                  <p className="text-lg font-semibold italic text-blue-400 mb-2">{experience.company}</p>
+                  <p className={darkMode ? "text-gray-600 text-justify" : "text-gray-400 text-justify"}>
+                      {experience.description}
+                  </p>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
-          <motion.div>
+          {/* Education Section */}
+          <motion.div
+             initial="hidden"
+             whileInView="visible"
+             viewport={{ once: true }}
+             variants={containerVariants}
+          >
             <h4 className="mt-12 text-3xl font-semibold text-blue-500">
               Education
             </h4>
-            <div className="mt-8 flex flex-col relative">
-              {/* Vertical line */}
-              <div className="absolute left-4 top-0 h-full border-l-2 border-blue-500"></div>
-
+             <div className="mt-8 flex flex-col relative border-l-2 border-blue-500 ml-4 md:ml-6">
               {education.map((degree, index) => (
-                <div key={index} className="mb-12 pl-12 relative">
-                  {/* Timeline Marker */}
-                  <div className="absolute -left-2 top-1 w-4 h-4 bg-blue-500 rounded-full"></div>
-
-                  {/* Year Range */}
-                  <div className="text-left text-blue-500 font-semibold text-lg mb-2">
-                    {degree.fromYear} - {degree.toYear}
-                  </div>
-
-                  {/* Role, Company, and Description */}
-                  <div className={darkMode ? "text-gray-600" : "text-gray-300"}>
-                    <h5 className={darkMode ? "text-xl font-semibold" : "text-xl font-semibold text-white"}>
+                <motion.div
+                    key={index}
+                    className="mb-12 pl-8 md:pl-12 relative"
+                    variants={timelineVariants}
+                >
+                  <div className="absolute -left-[9px] top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900"></div>
+                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                     <h5 className={darkMode ? "text-xl font-bold text-gray-800" : "text-xl font-bold text-white"}>
                       {degree.degreeName}
                     </h5>
-                    <p className="text-md font-semibold italic">{degree.university}</p>
-                    <p className="text-md mt-2 text-justify w-1/2">{degree.description}</p>
+                    <div className="text-blue-500 font-semibold text-md">
+                        {degree.fromYear} - {degree.toYear}
+                    </div>
                   </div>
-                </div>
+                  <p className="text-lg font-semibold italic text-blue-400">{degree.university}</p>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
-          <motion.div>
+           {/* Certifications Section */}
+           <motion.div
+             initial="hidden"
+             whileInView="visible"
+             viewport={{ once: true }}
+             variants={containerVariants}
+          >
             <h4 className="mt-12 text-3xl font-semibold text-blue-500">
               Certifications
             </h4>
-            <div className="mt-8 flex flex-col relative">
-              {/* Vertical line */}
-              <div className="absolute left-4 top-0 h-full border-l-2 border-blue-500"></div>
-
+             <div className="mt-8 flex flex-col relative border-l-2 border-blue-500 ml-4 md:ml-6">
               {certifications.map((certification, index) => (
-                <div key={index} className="mb-12 pl-12 relative">
-                  {/* Timeline Marker */}
-                  <div className="absolute -left-2 top-1 w-4 h-4 bg-blue-500 rounded-full"></div>
-
-                  {/* Year Range */}
-                  <div className="text-left text-blue-500 font-semibold text-lg mb-2">
-                    {certification.fromYear} - {certification.toYear}
-                  </div>
-
-                  {/* Role, Company, and Description */}
-                  <div className={darkMode ? "text-gray-600" : "text-gray-300"}>
-                    <h5 className={darkMode ? "text-xl font-semibold" : "text-xl font-semibold text-white"}>
-                      {certification.certificateName} <a className="text-blue-500 text-base" href={certification.credentials} target="_blank" rel="noreferrer">(verify)</a>
+                <motion.div
+                    key={index}
+                    className="mb-12 pl-8 md:pl-12 relative"
+                    variants={timelineVariants}
+                >
+                  <div className="absolute -left-[9px] top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900"></div>
+                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                     <h5 className={darkMode ? "text-xl font-bold text-gray-800" : "text-xl font-bold text-white"}>
+                      {certification.certificateName}
+                       <a className="text-blue-500 text-sm ml-2 hover:underline" href={certification.credentials} target="_blank" rel="noreferrer">(verify)</a>
                     </h5>
-                    <p className="text-md font-semibold italic">{certification.organization}</p>
-                    {/* <p className="text-md mt-2 text-justify w-1/2">{certification.description}</p> */}
+                    <div className="text-blue-500 font-semibold text-md">
+                        {certification.fromYear} - {certification.toYear}
+                    </div>
                   </div>
-                </div>
+                  <p className="text-lg font-semibold italic text-blue-400">{certification.organization}</p>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
+
+          {/* Tech Stack Section */}
           <motion.div>
             <h4 className="mt-12 text-3xl font-semibold text-blue-500">
               Tools and Technologies
@@ -188,34 +230,36 @@ const About = () => {
             <p
               className={
                 darkMode
-                  ? "mt-4 text-xl text-justify text-gray-500"
-                  : "mt-4 text-xl text-justify text-white"
+                  ? "mt-4 text-xl text-justify text-gray-600"
+                  : "mt-4 text-xl text-justify text-gray-300"
               }
             >
               I use a combination of cutting-edge technology and new age tools.
             </p>
           </motion.div>
 
-          <motion.div className="flex flex-wrap mt-8 flex flex-wrap justify-between ">
+          <motion.div
+            className="flex flex-wrap mt-8 justify-center gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {techStack.map((el, index) => (
               <motion.div
                 key={index}
-                initial="hidden"
-                whileInView={"visible"}
-                variants={{
-                  visible: {
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      type: "spring",
-                    },
-                  },
-                  hidden: { opacity: 1, y: 80 },
-                }}
-                className="py-2 px-4 bg-gray-50 md:m-4 mx-2 mt-6 rounded-lg flex items-center hover:scale-125 cursor-pointer md:w-48 w-40"
+                variants={itemVariants}
+                whileHover={{ scale: 1.1, translateY: -5 }}
+                className={
+                    darkMode
+                    ? "py-4 px-6 bg-white shadow-md border border-gray-100 rounded-xl flex items-center w-40 md:w-48 justify-center flex-col gap-3"
+                    : "py-4 px-6 bg-gray-800 shadow-md border border-gray-700 rounded-xl flex items-center w-40 md:w-48 justify-center flex-col gap-3"
+                }
               >
-                <img alt="" src={el.link} className="w-12" />
-                <h4 className="text-md ml-4">{el.name}</h4>
+                <img alt={el.name} src={el.link} className="w-12 h-12 object-contain" />
+                <h4 className={darkMode ? "text-md font-medium text-gray-800" : "text-md font-medium text-white"}>
+                    {el.name}
+                </h4>
               </motion.div>
             ))}
           </motion.div>

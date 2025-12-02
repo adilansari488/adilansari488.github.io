@@ -10,86 +10,169 @@ import cloudDark from "../assets/cloudDark.png";
 const Home = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
+
   return (
-    <>
-      <div
-        style={
-          darkMode
-            ? { backgroundImage: `url('${cloud}')`, backgroundSize: "cover" }
-            : { backgroundImage: `url('${cloudDark}'`, backgroundSize: "cover" }
-        }
-      >
-        <main
-          className="mx-auto max-w-7xl px-4 sm:px-6 md:mt-0 lg:px-8 flex flex-col md:flex-row items-center justify-center md:justify-between h-screen"
-          id="/"
-        >
-          <div className="sm:text-center lg:text-left">
-            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-              <motion.span
-                className={darkMode ? "block text-black" : " text-white"}
-              >
-                Hi, I am Adil
-              </motion.span>
-              <div></div>
-              <span className="block text-blue-500 z-0 lg:inline">
+    <div
+      id="/"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={
+        darkMode
+          ? { backgroundImage: `url('${cloud}')`, backgroundSize: "cover", backgroundPosition: "center" }
+          : { backgroundImage: `url('${cloudDark}')`, backgroundSize: "cover", backgroundPosition: "center" }
+      }
+    >
+      {/* Overlay gradient for better text readability */}
+      <div className={darkMode
+        ? "absolute inset-0 bg-gradient-to-r from-white/80 to-transparent pointer-events-none"
+        : "absolute inset-0 bg-gradient-to-r from-gray-900/80 to-transparent pointer-events-none"}>
+      </div>
+
+      <main className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center justify-between">
+
+        {/* Text Section */}
+        <div className="md:w-1/2 text-center md:text-left mt-10 md:mt-0">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <h2 className={
+              darkMode
+              ? "text-2xl md:text-3xl font-bold text-blue-600 mb-2"
+              : "text-2xl md:text-3xl font-bold text-blue-400 mb-2"
+            }>
+              Hello There!
+            </h2>
+            <h1 className={
+              darkMode
+                ? "text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 mb-4"
+                : "text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-4"
+            }>
+              I'm <span className={darkMode ? "text-blue-600" : "text-blue-400"}>Adil</span>
+            </h1>
+
+            <div className="text-2xl md:text-4xl font-semibold mb-6 h-12">
+              <span className={darkMode ? "text-gray-700" : "text-gray-300"}>I am a </span>
+              <span className={darkMode ? "text-blue-600" : "text-blue-400"}>
                 <Typed
-                  strings={["DevOps Engineer", "Cloud Engineer", "SRE"]}
+                  strings={[
+                    "DevOps Engineer",
+                    "Cloud Engineer",
+                    "SRE Enthusiast",
+                    "Tech Explorer"
+                  ]}
                   typeSpeed={50}
                   backSpeed={30}
                   loop
                 />
               </span>
-            </h1>
-            <p
-              className={
-                darkMode
-                  ? "mt-3 text-base text-black sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
-                  : "mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
-              }
-            >
-              I am a Cloud and DevOps Engineer. I am currently working at
-              IGT Solutions.
-            </p>
-            <div className="flex md:justify-start ">
-              {contactLinks.map((el) => (
-                <a
-                  href={el.link}
-                  className="mr-5 cursor-pointer mt-8 hover:scale-125"
-                  target="_blank"
-                >
-                  <img alt="" src={el.url} />
-                  {/* <p className="text-md mt-2 hover:hidden">{el.name}</p> */}
-                </a>
-              ))}
             </div>
-            {/* <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-              <div className="mt-3 sm:mt-0 cursor-pointer w-1/2">
-                <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-200 md:py-4 md:text-lg md:px-10" href="https://github.com/adilansari488" target="_blank">
-                  Resume
-                </a>
-              </div>
-            </div> */}
-          </div>
+
+            <p className={
+              darkMode
+                ? "text-lg md:text-xl text-gray-600 max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed"
+                : "text-lg md:text-xl text-gray-300 max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed"
+            }>
+              Building scalable cloud infrastructure and automating deployment pipelines.
+              Currently crafting solutions at <span className="font-bold">IGT Solutions</span>.
+            </p>
+
+            <motion.div
+              className="flex justify-center md:justify-start space-x-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              {contactLinks.map((el, index) => (
+                <motion.a
+                  key={index}
+                  href={el.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  className="bg-white/10 p-3 rounded-full backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all"
+                >
+                  <img src={el.url} alt={el.name} className="w-8 h-8" />
+                </motion.a>
+              ))}
+            </motion.div>
+
+            <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: 0.8 }}
+               className="mt-10"
+            >
+               <a
+                 href="contact"
+                 className={
+                   darkMode
+                   ? "inline-block px-8 py-3 bg-blue-600 text-white font-bold rounded-full shadow-lg hover:bg-blue-700 transform hover:-translate-y-1 transition-all"
+                   : "inline-block px-8 py-3 bg-blue-500 text-white font-bold rounded-full shadow-lg hover:bg-blue-600 transform hover:-translate-y-1 transition-all"
+                 }
+               >
+                 Let's Connect
+               </a>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Hero Image Section */}
+        <motion.div
+          className="md:w-1/2 flex justify-center relative"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
+            {/* Abstract Background Shapes behind image */}
+            <motion.div
+                animate={{
+                    rotate: 360,
+                    scale: [1, 1.1, 1]
+                }}
+                transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear"
+                }}
+                className={
+                    darkMode
+                    ? "absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-10 top-0 right-0"
+                    : "absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-900 rounded-full mix-blend-screen filter blur-3xl opacity-30 -z-10 top-0 right-0"
+                }
+            ></motion.div>
+             <motion.div
+                animate={{
+                    rotate: -360,
+                    scale: [1, 1.2, 1]
+                }}
+                transition={{
+                    duration: 25,
+                    repeat: Infinity,
+                    ease: "linear"
+                }}
+                className={
+                    darkMode
+                    ? "absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-10 bottom-0 left-10"
+                    : "absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-purple-900 rounded-full mix-blend-screen filter blur-3xl opacity-30 -z-10 bottom-0 left-10"
+                }
+            ></motion.div>
+
           <motion.img
-            initial="hidden"
-            whileInView={"visible"}
-            variants={{
-              visible: {
-                y: 0,
-                opacity: 1,
-                transition: {
-                  type: "spring",
-                },
-              },
-              hidden: { opacity: 1, y: 80 },
-            }}
             src={heroBg}
-            alt=""
-            className="md:w-3/6 hidden sm:block"
+            alt="Adil Ansari"
+            className="w-3/4 md:w-full max-w-lg object-contain drop-shadow-2xl"
+            animate={{ y: [0, -20, 0] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           />
-        </main>
-      </div>
-    </>
+        </motion.div>
+
+      </main>
+    </div>
   );
 };
 
