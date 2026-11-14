@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adil Ansari | DevOps, Cloud-native SRE &amp; Kubernetes Platform Engineering</title>
+<meta name="description"
+content="Senior DevOps Engineer and Cloud-native SRE with 5+ years building production-scale AWS and Kubernetes platforms: GitOps, CI/CD, DevSecOps, observability, and cost optimization. AWS Certified. AWS Community Builder.">
+<meta name="keywords"
+content="Adil Ansari, Adil Ansari DevOps Engineer, Adil Ansari SRE, Adil Ansari portfolio, Adil Ansari Agra, adilansari488, DevOps Engineer, Site Reliability Engineer, Cloud Native SRE, Kubernetes, Amazon EKS, AWS, Argo CD, GitOps, Terraform, Kyverno, DevSecOps, CI/CD, Azure DevOps, GitHub Actions, Jenkins, Dynatrace, Prometheus, Grafana, Platform Engineering, AWS Community Builder">
+<meta name="author" content="Adil Ansari">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#f2f5f2">
+<meta http-equiv="Cache-Control" content="max-age=86400, public">
+<script>
+/* Theme boot - runs before first paint so there is no flash.
+ * Light is the default; dark only when the visitor chose it. */
+(function () {
+  var t = null;
+  try { t = localStorage.getItem('theme'); } catch (e) {}
+  if (t !== 'light' && t !== 'dark') t = 'light';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Adil Ansari | DevOps &amp; Cloud-native SRE">
+<meta property="og:description" content="Senior DevOps Engineer building production-scale AWS and Kubernetes platforms: GitOps, DevSecOps, observability, and cost optimization.">
+<meta property="og:url" content="https://adilansari.dev">
+<meta property="og:site_name" content="Adil Ansari">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://adilansari.dev/req/img/profile.png">
+<meta property="og:image:alt" content="Adil Ansari, Senior DevOps Engineer and Cloud-native SRE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Adil Ansari | DevOps &amp; Cloud-native SRE">
+<meta name="twitter:description" content="Senior DevOps Engineer building production-scale AWS and Kubernetes platforms: GitOps, DevSecOps, observability, and cost optimization.">
+<meta name="twitter:image" content="https://adilansari.dev/req/img/profile.png">
+<meta name="twitter:image:alt" content="Adil Ansari - Senior DevOps Engineer and Cloud-native SRE">
+<link rel="canonical" href="https://adilansari.dev">
+
+<!-- Verified profiles (rel=me identity + crawlable entity links) -->
+<link rel="me" href="https://www.linkedin.com/in/adilansari488">
+<link rel="me" href="https://github.com/adilansari488">
+
+<link rel="icon" href="req/img/fav/favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="req/img/fav/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="req/img/fav/favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="req/img/fav/favicon-16x16.png?v=2">
+<link rel="apple-touch-icon" href="req/img/fav/apple-touch-icon.png?v=2">
+<link rel="manifest" href="req/img/fav/site.webmanifest?v=2">
+
+<link rel="preload" href="req/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="req/fonts/jetbrains-mono-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="req/css/styles.css">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://adilansari.dev/#website",
+      "url": "https://adilansari.dev/",
+      "name": "Adil Ansari",
+      "alternateName": ["Adil Ansari Portfolio", "adilansari488"],
+      "publisher": { "@id": "https://adilansari.dev/#person" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://adilansari.dev/#profilepage",
+      "url": "https://adilansari.dev/",
+      "name": "Adil Ansari | DevOps, Cloud-native SRE & Kubernetes Platform Engineering",
+      "isPartOf": { "@id": "https://adilansari.dev/#website" },
+      "mainEntity": { "@id": "https://adilansari.dev/#person" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://adilansari.dev/#person",
+      "name": "Adil Ansari",
+      "alternateName": ["adilansari488"],
+      "givenName": "Adil",
+      "familyName": "Ansari",
+      "jobTitle": "Senior DevOps Engineer",
+      "url": "https://adilansari.dev",
+      "email": "mailto:hello@adilansari.dev",
+      "image": "https://adilansari.dev/req/img/profile.png",
+      "address": { "@type": "PostalAddress", "addressLocality": "Agra", "addressRegion": "Uttar Pradesh", "addressCountry": "IN" },
+      "alumniOf": "Dayalbagh Educational Institute",
+      "worksFor": { "@type": "Organization", "name": "Atain (IGT Solutions)" },
+      "knowsAbout": [
+        "DevOps", "Site Reliability Engineering", "Kubernetes", "Amazon EKS", "AWS", "GitOps",
+        "Argo CD", "Terraform", "DevSecOps", "CI/CD", "Observability", "Cloud Cost Optimization"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/adilansari488",
+        "https://github.com/adilansari488"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="is-loading">
+
+<!-- ═══ Preloader · CI/CD deploy sequence ═══ -->
+<div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading">
+  <div class="preloader__glow"></div>
+  <div class="preloader__scan"></div>
+  <div class="boot">
+    <div class="boot__cmd"><span class="prompt">adil@prod</span> <span>:~$ deploy --env production --portfolio</span> <span class="caret"></span></div>
+
+    <div class="pipeline" aria-hidden="true">
+      <div class="pipeline__track"><span class="pipeline__fill"></span></div>
+
+      <div class="stage" data-stage="build">
+        <div class="stage__dot">
+          <svg class="default" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3-6 9 6 9M16 3l6 9-6 9M14 3l-4 18"/></svg>
+          <span class="spin"></span>
+          <svg class="stage__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <span class="stage__label">Build</span>
+      </div>
+
+      <div class="stage" data-stage="test">
+        <div class="stage__dot">
+          <svg class="default" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6l-5 9a2 2 0 0 0 1.8 3h12.4A2 2 0 0 0 20 18l-5-9V3M8 3h8M8 14h8"/></svg>
+          <span class="spin"></span>
+          <svg class="stage__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <span class="stage__label">Test</span>
+      </div>
+
+      <div class="stage" data-stage="deploy">
+        <div class="stage__dot">
+          <svg class="default" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 16.5 3 3M9 15l-4.5 1.5M14 6l4 4M12.5 2.5 6 9l-2 5 5-2 6.5-6.5a3.5 3.5 0 0 0-3-3z"/><path d="M15 9a3.5 3.5 0 0 0-3-3"/></svg>
+          <span class="spin"></span>
+          <svg class="stage__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <span class="stage__label">Deploy</span>
+      </div>
+
+      <div class="stage" data-stage="release">
+        <div class="stage__dot">
+          <svg class="default" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg>
+          <span class="spin"></span>
+          <svg class="stage__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <span class="stage__label">Release</span>
+      </div>
+    </div>
+
+    <div class="boot__foot">
+      <div class="boot__status"><span class="text-muted">›</span> initializing build environment<span class="text-muted">…</span></div>
+      <div class="boot__pct"><span class="n tnum">0</span><span class="s">%</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Ambient backdrop -->
+<div class="backdrop" aria-hidden="true">
+  <div class="backdrop__grid"></div>
+  <div class="backdrop__glow"></div>
+  <div class="backdrop__grain"></div>
+</div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ═══ Navigation ═══ -->
+<header class="site-header" id="siteHeader">
+  <nav class="nav" id="nav" aria-label="Primary">
+    <a class="brand" href="#hero" aria-label="Adil Ansari, home">
+      <span class="brand__mark">AA</span>
+      <span class="brand__name">Adil&nbsp;Ansari <span class="role">· DevOps &amp; SRE</span></span>
+    </a>
+    <div class="nav__links" id="navLinks">
+      <a class="nav__link is-active" href="#hero">Home</a>
+      <a class="nav__link" href="#about">About</a>
+      <a class="nav__link" href="#work">Work</a>
+      <a class="nav__link" href="#stack">Stack</a>
+      <a class="nav__link" href="#credentials">Proof</a>
+      <a class="nav__link" href="#contact">Contact</a>
+    </div>
+    <div class="nav__right">
+      <span class="nav__status" title="Local time · Agra (IST)">
+        <span class="live"></span>available
+        <span class="clock tnum" data-clock>00:00:00</span>
+      </span>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" data-cursor="theme">
+        <svg class="tt-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="tt-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a class="btn btn--primary nav__cta magnetic" href="#contact" data-cursor="connect">Let's talk</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ═══ Hero ═══ -->
+<section class="hero" id="hero">
+  <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+  <div class="container">
+    <div class="hero__grid">
+      <div class="hero__intro">
+        <span class="eyebrow hero__eyebrow">DevOps &amp; Cloud-native SRE <span class="reg">&nbsp;· ap-south-1 / Agra</span></span>
+
+        <h1 class="hero__title" aria-label="Adil Ansari">
+          <span class="line line--fill"><span data-decode="ADIL">ADIL</span></span>
+          <span class="line line--grad"><span data-decode="ANSARI">ANSARI</span><span class="blink" aria-hidden="true"></span></span>
+        </h1>
+
+        <p class="lead hero__lead">
+          I build Kubernetes platforms that
+          <span class="em">scale, self-heal, and ship on GitOps autopilot</span>.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg magnetic" href="#contact" data-cursor="connect">
+            Let's connect
+            <svg class="btn__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#work" data-cursor="open">
+            <svg class="btn__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            View the work
+          </a>
+        </div>
+
+        <div class="status-strip" aria-label="Status">
+          <div class="stat">
+            <span class="stat__k">status</span>
+            <span class="stat__v live"><span class="dot"></span>operational</span>
+          </div>
+          <div class="stat">
+            <span class="stat__k">region</span>
+            <span class="stat__v">ap-south-1 · Agra</span>
+          </div>
+          <div class="stat">
+            <span class="stat__k">since</span>
+            <span class="stat__v">2021 · 5y+ uptime</span>
+          </div>
+          <div class="stat">
+            <span class="stat__k">local</span>
+            <span class="stat__v tnum" data-clock>00:00:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Git graph - a release, drawn live · hover a commit for its hash -->
+      <div class="hero__graph" aria-hidden="true">
+        <svg class="git" viewBox="0 0 420 560" fill="none">
+          <!-- lines -->
+          <path class="g-line g-main"   d="M150 20 V 540" pathLength="1"/>
+          <path class="g-line g-branch" d="M150 120 C 150 168, 300 156, 300 204 V 356 C 300 404, 150 392, 150 440" pathLength="1"/>
+          <!-- deploy signal - a pulse rides the branch every few seconds -->
+          <path class="g-flow" d="M150 120 C 150 168, 300 156, 300 204 V 356 C 300 404, 150 392, 150 440" pathLength="1"/>
+
+          <!-- commits - each group is a fat hover target; the cursor shows the hash -->
+          <g class="g-commit" data-cursor="c0ffee1">
+            <circle class="g-hit" cx="150" cy="60" r="22"/>
+            <circle class="g-c g-c--main d1" cx="150" cy="60"  r="7" />
+            <text class="g-t g-t--dim d1" x="130" y="64"  text-anchor="end">main</text>
+          </g>
+          <g class="g-commit" data-cursor="fea7c1a">
+            <circle class="g-hit" cx="150" cy="120" r="22"/>
+            <circle class="g-c g-c--acc  d2" cx="150" cy="120" r="7" />
+            <text class="g-t d2" x="130" y="124" text-anchor="end">checkout -b feat/ci</text>
+          </g>
+          <g class="g-commit" data-cursor="add5afe">
+            <circle class="g-hit" cx="300" cy="240" r="22"/>
+            <circle class="g-c g-c--acc  d3" cx="300" cy="240" r="7" />
+            <text class="g-t d3" x="320" y="244">+ pipeline.yml</text>
+          </g>
+          <g class="g-commit" data-cursor="5ecc0de">
+            <circle class="g-hit" cx="300" cy="320" r="22"/>
+            <circle class="g-c g-c--acc  d4" cx="300" cy="320" r="7" />
+            <text class="g-t g-t--acc d4" x="320" y="324">checks ✓ secure</text>
+          </g>
+          <g class="g-commit" data-cursor="decade00">
+            <circle class="g-hit" cx="150" cy="440" r="22"/>
+            <circle class="g-c g-c--acc  d5" cx="150" cy="440" r="7" />
+            <text class="g-t d5" x="130" y="444" text-anchor="end">merge → main</text>
+          </g>
+
+          <!-- HEAD + release tag -->
+          <g class="g-commit g-head" data-cursor="HEAD → v2.0">
+            <circle class="g-hit" cx="150" cy="505" r="26"/>
+            <circle class="g-c g-c--acc  d5" cx="150" cy="505" r="8" />
+            <circle class="g-ring" cx="150" cy="505" r="9" />
+            <g class="g-tag">
+              <g class="g-tag__in">
+                <rect x="174" y="491" width="142" height="28" rx="14"/>
+                <text x="245" y="509" text-anchor="middle">v2.0 · deployed</text>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#about" aria-label="Scroll down" data-cursor="scroll">
+    <span class="txt">scroll</span>
+    <span class="rail"></span>
+  </a>
+</section>
+
+
+<!-- ═══ Marquee bridge ═══ -->
+<div class="marquee" aria-label="Enterprise DevOps ecosystem">
+  <div class="marquee__track" id="marqueeTrack">
+    <span class="marquee__item"><span class="d"></span>Kubernetes</span>
+    <span class="marquee__item"><span class="d"></span>AWS</span>
+    <span class="marquee__item"><span class="d"></span>Amazon EKS</span>
+    <span class="marquee__item"><span class="d"></span>Argo CD</span>
+    <span class="marquee__item"><span class="d"></span>GitOps</span>
+    <span class="marquee__item"><span class="d"></span>Terraform</span>
+    <span class="marquee__item"><span class="d"></span>GitHub Actions</span>
+    <span class="marquee__item"><span class="d"></span>Azure DevOps</span>
+    <span class="marquee__item"><span class="d"></span>Jenkins</span>
+    <span class="marquee__item"><span class="d"></span>Kyverno</span>
+    <span class="marquee__item"><span class="d"></span>Policy as Code</span>
+    <span class="marquee__item"><span class="d"></span>Helm</span>
+    <span class="marquee__item"><span class="d"></span>Karpenter</span>
+    <span class="marquee__item"><span class="d"></span>Docker</span>
+    <span class="marquee__item"><span class="d"></span>Trivy</span>
+    <span class="marquee__item"><span class="d"></span>SonarQube</span>
+    <span class="marquee__item"><span class="d"></span>Mend</span>
+    <span class="marquee__item"><span class="d"></span>DevSecOps</span>
+    <span class="marquee__item"><span class="d"></span>External Secrets Operator</span>
+    <span class="marquee__item"><span class="d"></span>Dynatrace</span>
+    <span class="marquee__item"><span class="d"></span>Prometheus</span>
+    <span class="marquee__item"><span class="d"></span>Grafana</span>
+    <span class="marquee__item"><span class="d"></span>Loki</span>
+    <span class="marquee__item"><span class="d"></span>EFK Stack</span>
+    <span class="marquee__item"><span class="d"></span>Observability</span>
+    <span class="marquee__item"><span class="d"></span>Apache Kafka</span>
+    <span class="marquee__item"><span class="d"></span>Python</span>
+    <span class="marquee__item"><span class="d"></span>Bash</span>
+    <span class="marquee__item"><span class="d"></span>Ansible</span>
+    <span class="marquee__item"><span class="d"></span>Linux</span>
+    <span class="marquee__item"><span class="d"></span>SRE</span>
+    <span class="marquee__item"><span class="d"></span>Platform Engineering</span>
+    <span class="marquee__item"><span class="d"></span>Golden Paths</span>
+    <span class="marquee__item"><span class="d"></span>FinOps</span>
+    <span class="marquee__item"><span class="d"></span>Cost Optimization</span>
+    <span class="marquee__item"><span class="d"></span>GenAI Pipelines</span>
+    <span class="marquee__item"><span class="d"></span>Claude Code</span>
+    <span class="marquee__item"><span class="d"></span>Amazon Bedrock</span>
+    <span class="marquee__item"><span class="d"></span>Azure</span>
+    <span class="marquee__item"><span class="d"></span>AKS</span>
+    <span class="marquee__item"><span class="d"></span>High Availability</span>
+    <span class="marquee__item"><span class="d"></span>CloudWatch</span>
+    <span class="marquee__item"><span class="d"></span>Mentoring</span>
+  </div>
+</div>
+
+
+<!-- ═══ 01 · whoami ═══ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about__grid">
+
+      <!-- identity card -->
+      <aside class="idcard" data-reveal="left">
+        <div class="idcard__head">
+          <span>identity.card</span>
+          <span class="on">verified</span>
+        </div>
+        <div class="idcard__photo">
+          <img src="req/img/profile-canyon.webp" alt="Adil Ansari" width="800" height="800" loading="lazy">
+          <span class="idcard__scan"></span>
+        </div>
+        <div class="idcard__meta">
+          <div class="idcard__row"><span class="k">uid</span><span class="v">adilansari488</span></div>
+          <div class="idcard__row"><span class="k">role</span><span class="v">sr. devops / sre</span></div>
+          <div class="idcard__row"><span class="k">base</span><span class="v">27.1767° N · 78.0081° E</span></div>
+          <div class="idcard__row"><span class="k">tz</span><span class="v">IST · UTC+05:30</span></div>
+          <div class="idcard__row"><span class="k">exp</span><span class="v">5y+ · since 2021</span></div>
+          <div class="idcard__row"><span class="k">status</span><span class="v acc">● open to opportunities</span></div>
+        </div>
+      </aside>
+
+      <!-- manifesto -->
+      <div class="about__body">
+        <div class="section-head">
+          <span class="eyebrow" data-reveal><span class="idx">01</span> · whoami</span>
+          <h2 data-reveal>Reliability is a feature.<br>I build it in.</h2>
+        </div>
+        <p class="lead-big" data-reveal>
+          Five years making production boring:
+          <span class="dim">clusters that stay up, deploys nobody fears.</span>
+        </p>
+        <p data-reveal>
+          I design and run <span class="hl">production-scale AWS and Kubernetes platforms</span>
+          using GitOps, Infrastructure as Code, and DevSecOps practices, and I
+          weave AI into the delivery lifecycle so engineering teams ship faster
+          with fewer surprises.
+        </p>
+        <p data-reveal>
+          The throughline: <span class="hl">declare everything, automate the repetitive,
+          secure the risky.</span> AWS Certified, an AWS Community Builder, a
+          three-time Rising Star Award winner, and a Smart India Hackathon 2022 champion.
+        </p>
+
+        <div class="ops-principles" data-stagger>
+          <article class="principle">
+            <span class="principle__n">01</span>
+            <h3>Declare everything</h3>
+            <p>Git is the source of truth: reviewed, reconciled, drift-checked, and always reversible.</p>
+          </article>
+          <article class="principle">
+            <span class="principle__n">02</span>
+            <h3>Automate toil</h3>
+            <p>Turn repeated manual work into tested scripts, golden paths, and guardrails.</p>
+          </article>
+          <article class="principle">
+            <span class="principle__n">03</span>
+            <h3>Secure by default</h3>
+            <p>Policy-as-code, scanned images, and managed secrets live inside the path, not after it.</p>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══ 02 · Work - release log ═══ -->
+<section class="section" id="work">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow" data-reveal>
+        <span class="idx">02</span> · git log --career
+      </span>
+      <h2 data-reveal>Deployment history.</h2>
+    </div>
+
+    <div class="timeline" data-reveal>
+
+      <article class="release" data-reveal>
+        <div class="release__aside">
+          <span class="release__tag">release/2025.08 · HEAD</span>
+          <h3 class="release__co">Atain (IGT Solutions)</h3>
+          <p class="release__period">Aug 2025 → present</p>
+        </div>
+
+        <div class="release__main">
+
+          <h4 class="release__role">
+            Senior DevOps Engineer
+            <span class="now">now</span>
+          </h4>
+
+          <p class="release__sum">
+            Architecting <span class="hl">production EKS platforms and multi-node on-prem Kubernetes clusters</span> at 99.95% control-plane and 99.99% data-plane uptime. Every release flows through GitOps with Argo CD, guarded by Kyverno policy-as-code, and watched by Dynatrace across 200+ servers. Built a <span class="hl">GenAI-driven CI/CD pipeline that reviews pull requests autonomously</span> and brought Claude, Gemini, and Codex into the engineering workflow, alongside Kafka, EFK logging, and automated index lifecycle management.
+          </p>
+
+          <div class="release__chips" data-stagger>
+            <span class="kchip"><span class="d"></span>Kubernetes</span>
+            <span class="kchip"><span class="d"></span>Argo CD</span>
+            <span class="kchip"><span class="d"></span>Kyverno</span>
+            <span class="kchip"><span class="d"></span>Dynatrace</span>
+            <span class="kchip"><span class="d"></span>GenAI CI/CD</span>
+            <span class="kchip"><span class="d"></span>Kafka</span>
+          </div>
+
+        </div>
+      </article>
+
+      <article class="release release--past" data-reveal>
+        <div class="release__aside">
+          <span class="release__tag">release/2022.05</span>
+          <h3 class="release__co">Atain (IGT Solutions)</h3>
+          <p class="release__period">May 2022 → Jul 2025 · 3y 3m</p>
+        </div>
+
+        <div class="release__main">
+
+          <h4 class="release__role">
+            DevOps Engineer
+          </h4>
+
+          <p class="release__sum">
+            Ran delivery for <span class="hl">500+ microservices</span> across multiple Kubernetes clusters, migrated 50+ applications to EKS with a 100% success rate, and cut deployment time by 80% with Azure Pipelines. Built the internal golden path that took new-service onboarding from a day to an hour, led <span class="hl">$40K+ in annual AWS savings</span>, and mentored 5 junior engineers along the way.
+          </p>
+
+          <div class="release__chips" data-stagger>
+            <span class="kchip"><span class="d"></span>AWS</span>
+            <span class="kchip"><span class="d"></span>EKS</span>
+            <span class="kchip"><span class="d"></span>Terraform</span>
+            <span class="kchip"><span class="d"></span>Azure DevOps</span>
+            <span class="kchip"><span class="d"></span>Prometheus &amp; Grafana</span>
+            <span class="kchip"><span class="d"></span>FinOps</span>
+          </div>
+
+        </div>
+      </article>
+
+      <article class="release release--past" data-reveal>
+        <div class="release__aside">
+          <span class="release__tag">release/2021.09</span>
+          <h3 class="release__co">LinuxWorld Informatics</h3>
+          <p class="release__period">Sep 2021 → Sep 2022 · 1y</p>
+        </div>
+
+        <div class="release__main">
+
+          <h4 class="release__role">
+            ARTH2.0 Trainee
+          </h4>
+
+          <p class="release__sum">
+            Where the foundations were poured: <span class="hl">Linux administration, Kubernetes workloads, Jenkins CI/CD</span>, and the Bash and Python automation habits that never left.
+          </p>
+
+          <div class="release__chips" data-stagger>
+            <span class="kchip"><span class="d"></span>Linux</span>
+            <span class="kchip"><span class="d"></span>Kubernetes</span>
+            <span class="kchip"><span class="d"></span>Jenkins</span>
+            <span class="kchip"><span class="d"></span>Bash</span>
+            <span class="kchip"><span class="d"></span>Python</span>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Selected outcomes - numbered stat strip -->
+
+    <div class="impact-strip" data-reveal>
+
+      <span class="eyebrow">
+        <span class="idx">02a</span> · git diff --stat
+      </span>
+
+      <h3 class="impact-title">The half-decade, diffed.</h3>
+
+      <p class="impact-sub">Five years of commits, squashed into numbers.</p>
+
+      <div class="impact-grid" data-stagger>
+
+        <article class="impact-stat">
+          <strong class="impact-stat__n">500<span>+</span></strong>
+          <span class="impact-stat__l">Microservices deployed &amp; operated</span>
+        </article>
+
+        <article class="impact-stat">
+          <strong class="impact-stat__n">50<span>+</span></strong>
+          <span class="impact-stat__l">Apps migrated to EKS · 100% success</span>
+        </article>
+
+        <article class="impact-stat">
+          <strong class="impact-stat__n">40<span>K+</span></strong>
+          <span class="impact-stat__l">USD saved on AWS every year</span>
+        </article>
+
+        <article class="impact-stat">
+          <strong class="impact-stat__n">99.99<span>%</span></strong>
+          <span class="impact-stat__l">Data-plane uptime on Kubernetes</span>
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ 03 · Stack - spec sheet ═══ -->
+<section class="section" id="stack">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-reveal><span class="idx">03</span> · cat stack.yaml</span>
+      <h2 data-reveal>The toolchain, declared.</h2>
+    </div>
+
+    <div class="stack-stage" data-reveal>
+      <div class="stack-stage__copy">
+        <span class="stack-stage__label">production toolkit</span>
+        <p>Built over five years of running Kubernetes, AWS, and delivery pipelines in production, from startup-speed releases to enterprise-grade controls.</p>
+      </div>
+
+      <div class="stack-stage__surface">
+        <figure class="spec spec--peek">
+          <figcaption>
+            <span class="d"></span>
+            <span class="path">infra/</span>stack.yaml
+            <span class="path">· tracked · drift checked</span>
+            <span class="spec__hint">hover a card ↓</span>
+          </figcaption>
+          <span class="spec__scan" aria-hidden="true"></span>
+          <div class="spec__mask">
+            <pre data-stagger><span class="ln"><span class="no">1</span><span><span class="k">stack</span><span class="p">:</span></span></span><span class="ln"><span class="no">2</span><span>  <span class="k">delivery</span><span class="p">:</span>      <span class="p">[</span><span class="v">github-actions</span><span class="p">,</span> <span class="v">azure-devops</span><span class="p">,</span> <span class="v">jenkins</span><span class="p">,</span> <span class="v">argo-cd</span><span class="p">]</span></span></span><span class="ln"><span class="no">3</span><span>  <span class="k">containers</span><span class="p">:</span>    <span class="p">[</span><span class="v">kubernetes</span><span class="p">,</span> <span class="v">eks</span><span class="p">,</span> <span class="v">aks</span><span class="p">,</span> <span class="v">helm</span><span class="p">,</span> <span class="v">karpenter</span><span class="p">,</span> <span class="v">kyverno</span><span class="p">,</span> <span class="v">docker</span><span class="p">]</span></span></span><span class="ln"><span class="no">4</span><span>  <span class="k">cloud</span><span class="p">:</span>         <span class="p">[</span><span class="v">aws</span><span class="p">,</span> <span class="v">azure</span><span class="p">,</span> <span class="v">bedrock</span><span class="p">]</span></span></span><span class="ln"><span class="no">5</span><span>  <span class="k">iac</span><span class="p">:</span>           <span class="p">[</span><span class="v">terraform</span><span class="p">,</span> <span class="v">ansible</span><span class="p">]</span></span></span><span class="ln"><span class="no">6</span><span>  <span class="k">devsecops</span><span class="p">:</span>     <span class="p">[</span><span class="v">trivy</span><span class="p">,</span> <span class="v">sonarqube</span><span class="p">,</span> <span class="v">mend</span><span class="p">,</span> <span class="v">external-secrets</span><span class="p">]</span></span></span><span class="ln"><span class="no">7</span><span>  <span class="k">observability</span><span class="p">:</span> <span class="p">[</span><span class="v">dynatrace</span><span class="p">,</span> <span class="v">prometheus</span><span class="p">,</span> <span class="v">grafana</span><span class="p">,</span> <span class="v">loki</span><span class="p">,</span> <span class="v">efk</span><span class="p">,</span> <span class="v">cloudwatch</span><span class="p">]</span></span></span><span class="ln"><span class="no">8</span><span>  <span class="k">messaging</span><span class="p">:</span>     <span class="p">[</span><span class="v">kafka</span><span class="p">,</span> <span class="v">activemq</span><span class="p">,</span> <span class="v">ibm-mq</span><span class="p">,</span> <span class="v">sqs</span><span class="p">,</span> <span class="v">sns</span><span class="p">]</span></span></span><span class="ln"><span class="no">9</span><span>  <span class="k">data</span><span class="p">:</span>          <span class="p">[</span><span class="v">postgres</span><span class="p">,</span> <span class="v">mysql</span><span class="p">,</span> <span class="v">mongodb</span><span class="p">,</span> <span class="v">dynamodb</span><span class="p">,</span> <span class="v">aurora</span><span class="p">]</span></span></span><span class="ln"><span class="no">10</span><span>  <span class="k">scripting</span><span class="p">:</span>     <span class="p">[</span><span class="v">python</span><span class="p">,</span> <span class="v">bash</span><span class="p">]</span></span></span><span class="ln"><span class="no">11</span><span>  <span class="k">ai</span><span class="p">:</span>            <span class="p">[</span><span class="v">claude-code</span><span class="p">,</span> <span class="v">codex</span><span class="p">,</span> <span class="v">gemini</span><span class="p">,</span> <span class="v">antigravity</span><span class="p">]</span></span></span><span class="ln"><span class="no">12</span><span></span></span><span class="ln"><span class="no">13</span><span><span class="k">mode</span><span class="p">:</span> <span class="v">automate_the_repetitive</span>  <span class="c"># gitops • automate toil • secure by default</span><span class="cursor-line"></span></span></span></pre>
+          </div>
+        </figure>
+
+        <div class="stack-cards" data-stagger>
+          <article class="stack-card" data-keys="delivery,iac,scripting,ai">
+            <span class="stack-card__k">ship</span>
+            <strong>CI/CD, GitOps &amp; Automation</strong>
+            <p>GitHub Actions, Azure DevOps, Argo CD, Terraform, Python, Claude Code</p>
+          </article>
+
+          <article class="stack-card" data-keys="cloud,containers,messaging,data">
+            <span class="stack-card__k">run</span>
+            <strong>Cloud &amp; Kubernetes</strong>
+            <p>AWS, EKS, Helm, Karpenter, Kafka, Postgres, DynamoDB</p>
+          </article>
+
+          <article class="stack-card" data-keys="devsecops,observability">
+            <span class="stack-card__k">guard</span>
+            <strong>Security &amp; Observability</strong>
+            <p>Kyverno, Trivy, SonarQube, Dynatrace, Prometheus, Grafana</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 · Credentials ═══ -->
+<section class="section" id="credentials">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-reveal><span class="idx">04</span> · ls -la credentials/</span>
+      <h2 data-reveal>Proof, not promises.</h2>
+    </div>
+
+    <div class="credgroup">
+      <div data-stagger>
+        <a class="crow" href="https://www.credly.com/badges/0b10aa6a-c7b4-4258-aacf-c7d69da736ed/public_url" target="_blank" rel="noopener" data-cursor="verify">
+          <span class="crow__issuer">AWS</span>
+          <span class="crow__name">Certified Solutions Architect Associate</span>
+          <span class="crow__dates">certified</span>
+          <span class="crow__go">verify <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+        </a>
+        <a class="crow" href="https://rhtapps.redhat.com/verify?certId=230-271-777" target="_blank" rel="noopener" data-cursor="verify">
+          <span class="crow__issuer">Red Hat</span>
+          <span class="crow__name">Certified System Administrator (RHCSA)</span>
+          <span class="crow__dates">certified</span>
+          <span class="crow__go">verify <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="credgroup">
+      <div class="credgroup__label" data-reveal>recognition</div>
+      <div class="awards3" data-stagger>
+        <article class="aw">
+          <div class="aw__year">3×</div>
+          <h3 class="aw__t">Rising Star Award</h3>
+          <span class="aw__tag">individual award</span>
+          <p class="aw__d">Recognized three separate times at IGT Solutions for ownership, automation, and raising the reliability bar across production platforms.</p>
+        </article>
+        <article class="aw">
+          <div class="aw__year">AWS</div>
+          <h3 class="aw__t">AWS Community Builder</h3>
+          <span class="aw__tag">community</span>
+          <p class="aw__d">Selected by AWS for technical expertise and a commitment to sharing cloud knowledge with the wider engineering community.</p>
+        </article>
+        <article class="aw">
+          <div class="aw__year">2022</div>
+          <h3 class="aw__t">Smart India Hackathon Winner</h3>
+          <span class="aw__tag">national hackathon</span>
+          <p class="aw__d">Winner of Smart India Hackathon 2022, India's flagship national innovation competition, for building a working solution under pressure.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="credgroup" style="margin-bottom:0">
+      <div class="credgroup__label" data-reveal>education</div>
+      <div class="edu" data-reveal>
+        <span class="edu__ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5M22 10v6"/></svg>
+        </span>
+        <div>
+          <div class="edu__deg">Bachelor of Vocation</div>
+          <div class="edu__field">Internet of Things</div>
+          <div class="edu__school">Dayalbagh Educational Institute, Agra</div>
+        </div>
+        <span class="edu__years">2019 → 2022</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 05 · Contact ═══ -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <span class="eyebrow" data-reveal><span class="idx">05</span> · ping adil</span>
+    <h2 class="contact__title" data-reveal>Ready to ship<br><span class="grad">something reliable?</span></h2>
+    <p class="contact__sub" data-reveal>One conversation about your clusters, pipelines, or cloud bill, and how to make delivery faster, safer, and cheaper to run.</p>
+
+    <div class="contact__actions" data-reveal>
+      <a class="btn btn--primary btn--lg magnetic" href="mailto:hello@adilansari.dev" data-cursor="send">
+        Email me
+        <svg class="btn__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn--ghost btn--lg" href="https://www.linkedin.com/in/adilansari488" target="_blank" rel="noopener" data-cursor="open">
+        <svg class="btn__ico" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13M7.12 20.45H3.56V9h3.56z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn btn--ghost btn--lg" href="https://github.com/adilansari488" target="_blank" rel="noopener" data-cursor="open">
+        <svg class="btn__ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5"/></svg>
+        GitHub
+      </a>
+    </div>
+
+    <div data-reveal>
+      <button class="copyline" id="copyEmail" data-copy="hello@adilansari.dev" data-cursor="copy" type="button" aria-live="polite">
+        <span class="p">$</span>
+        <span class="addr">echo hello@adilansari.dev | clip</span>
+        <span class="ok">✓ copied to clipboard</span>
+      </button>
+    </div>
+
+    <div class="contact__meta" data-reveal style="margin-top:2.2rem">
+      <span>base: Agra, Uttar Pradesh, IN</span>
+      <a href="https://www.google.com/maps?q=Agra,Uttar+Pradesh,India" target="_blank" rel="noopener" data-cursor="map">27.1767° N · 78.0081° E ↗</a>
+      <span>tz: IST · UTC+05:30</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer class="site-footer">
+  <div class="container footer__row">
+    <a class="footer__brand" href="#hero" data-cursor="top">
+      <span class="brand__mark">AA</span> Adil Ansari
+    </a>
+    <span class="footer__mono">© 2026 · deployed from Agra · status: <span class="text-accent">operational</span></span>
+    <div class="footer__links">
+      <a href="https://www.linkedin.com/in/adilansari488" target="_blank" rel="noopener" data-cursor="open">LinkedIn</a>
+      <a href="https://github.com/adilansari488" target="_blank" rel="noopener" data-cursor="open">GitHub</a>
+      <a href="mailto:hello@adilansari.dev" data-cursor="send">Email</a>
+      <a href="#hero" data-cursor="top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+<script src="req/js/preloader.js" defer></script>
+<script src="req/js/main.js" defer></script>
+<script src="req/js/cursor.js" defer></script>
+</body>
+</html>
