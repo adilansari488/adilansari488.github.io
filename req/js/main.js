@@ -1,4 +1,4 @@
-/* main.js - nav, live clock, magnetic, decode, reveals, marquee, meters,
+/* main.js - nav, magnetic, decode, reveals, marquee, meters,
  * and the hero infra-topology canvas. Vanilla JS; Lenis is progressive. */
 (function () {
   'use strict';
@@ -85,18 +85,6 @@
     }
     applyTheme(next, true);
   });
-  /* ── Live clock (IST · Agra) ──────────────────────────────────────── */
-  var clocks = $$('[data-clock]');
-  if (clocks.length) {
-    var fmt = null;
-    try { fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }); } catch (e) {}
-    var tick = function () {
-      var t = fmt ? fmt.format(new Date()) : new Date().toTimeString().slice(0, 8);
-      clocks.forEach(function (c) { c.textContent = t; });
-    };
-    tick(); setInterval(tick, 1000);
-  }
-
   /* ── Magnetic buttons ──────────────────────────────────────── */
   if (finePointer && !reduce) {
     $$('.magnetic').forEach(function (el) {

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 336" width="800" height="336">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d14"/>
+      <stop offset="100%" stop-color="#141a24"/>
+    </linearGradient>
+    <pattern id="grid2" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <rect width="800" height="336" fill="url(#bg2)"/>
+  <rect width="800" height="336" fill="url(#grid2)"/>
+  <circle cx="680" cy="90" r="150" fill="#3ecf8e" opacity="0.08" filter="blur(45px)"/>
+
+  <!-- Code Frame -->
+  <rect x="40" y="32" width="720" height="272" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(62,207,142,0.25)" stroke-width="1.2"/>
+  <circle cx="68" cy="56" r="5" fill="#ff5f56"/>
+  <circle cx="86" cy="56" r="5" fill="#ffbd2e"/>
+  <circle cx="104" cy="56" r="5" fill="#27c93f"/>
+  <text x="130" y="60" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="12">github.com/adilansari488/eks-terraform · modular infrastructure</text>
+
+  <!-- AWS VPC Enclosure -->
+  <rect x="65" y="88" width="670" height="142" rx="8" fill="rgba(255,255,255,0.015)" stroke="rgba(255,255,255,0.12)" stroke-dasharray="3 3"/>
+  <text x="80" y="108" fill="rgba(255,255,255,0.5)" font-family="monospace" font-size="10">AWS VPC (Private Subnets · Multi-AZ)</text>
+
+  <!-- Control Plane Box -->
+  <rect x="85" y="122" width="180" height="92" rx="6" fill="rgba(62,207,142,0.06)" stroke="rgba(62,207,142,0.4)"/>
+  <text x="175" y="152" text-anchor="middle" fill="#5ff0ab" font-family="sans-serif" font-weight="700" font-size="13">EKS Control Plane</text>
+  <text x="175" y="172" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="monospace" font-size="11">Kubernetes v1.30</text>
+  <text x="175" y="192" text-anchor="middle" fill="#3ecf8e" font-family="monospace" font-size="10">OIDC · Pod Identity</text>
+
+  <!-- Arrow -->
+  <path d="M 265 168 L 315 168" stroke="#3ecf8e" stroke-width="2"/>
+  <polygon points="315,164 323,168 315,172" fill="#3ecf8e"/>
+
+  <!-- Managed Node Groups -->
+  <rect x="325" y="122" width="200" height="92" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="425" y="152" text-anchor="middle" fill="#f4f6f8" font-family="sans-serif" font-weight="600" font-size="13">Managed Node Groups</text>
+  <text x="425" y="172" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="monospace" font-size="11">Autoscaling · Karpenter</text>
+  <text x="425" y="192" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="10">Spot + On-Demand</text>
+
+  <!-- Arrow -->
+  <path d="M 525 168 L 565 168" stroke="#3ecf8e" stroke-width="2" stroke-dasharray="4 2"/>
+  <polygon points="565,164 573,168 565,172" fill="#3ecf8e"/>
+
+  <!-- Kyverno / ESO Box -->
+  <rect x="575" y="122" width="145" height="92" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.15)"/>
+  <text x="647" y="152" text-anchor="middle" fill="#f4f6f8" font-family="sans-serif" font-weight="600" font-size="12">Security Guardrails</text>
+  <text x="647" y="172" text-anchor="middle" fill="#3ecf8e" font-family="monospace" font-size="10">Kyverno Policy</text>
+  <text x="647" y="192" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="10">External Secrets</text>
+
+  <!-- Bottom Badges -->
+  <g transform="translate(65, 246)">
+    <rect width="100" height="28" rx="6" fill="rgba(62,207,142,0.12)"/>
+    <text x="50" y="18" text-anchor="middle" fill="#5ff0ab" font-family="monospace" font-size="11">TERRAFORM</text>
+    
+    <rect x="110" width="80" height="28" rx="6" fill="rgba(255,255,255,0.05)"/>
+    <text x="150" y="18" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="monospace" font-size="11">AWS EKS</text>
+
+    <rect x="200" width="100" height="28" rx="6" fill="rgba(255,255,255,0.05)"/>
+    <text x="250" y="18" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="monospace" font-size="11">KUBERNETES</text>
+
+    <text x="640" y="18" text-anchor="end" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="11">IaC · Modular Architecture</text>
+  </g>
+</svg>

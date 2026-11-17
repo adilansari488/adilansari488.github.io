@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 336" width="800" height="336">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d10"/>
+      <stop offset="100%" stop-color="#121820"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3ecf8e"/>
+      <stop offset="100%" stop-color="#5ff0ab"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <rect width="800" height="336" fill="url(#bg)"/>
+  <rect width="800" height="336" fill="url(#grid)"/>
+  <circle cx="700" cy="80" r="140" fill="#3ecf8e" opacity="0.08" filter="blur(40px)"/>
+
+  <!-- Code/Terminal Header -->
+  <rect x="40" y="32" width="720" height="272" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(62,207,142,0.25)" stroke-width="1.2"/>
+  <circle cx="68" cy="56" r="5" fill="#ff5f56"/>
+  <circle cx="86" cy="56" r="5" fill="#ffbd2e"/>
+  <circle cx="104" cy="56" r="5" fill="#27c93f"/>
+  <text x="130" y="60" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="12">github.com/adilansari488/tinyzr · serverless url engine</text>
+
+  <!-- Diagram Nodes -->
+  <!-- Client Box -->
+  <rect x="70" y="110" width="130" height="90" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.15)"/>
+  <text x="135" y="145" text-anchor="middle" fill="#f4f6f8" font-family="sans-serif" font-weight="600" font-size="14">HTTP Client</text>
+  <text x="135" y="168" text-anchor="middle" fill="#3ecf8e" font-family="monospace" font-size="11">GET /r/{slug}</text>
+
+  <!-- Arrow 1 -->
+  <path d="M 200 155 L 255 155" stroke="#3ecf8e" stroke-width="2" stroke-dasharray="4 2"/>
+  <polygon points="255,151 263,155 255,159" fill="#3ecf8e"/>
+
+  <!-- API Gateway -->
+  <rect x="265" y="95" width="140" height="120" rx="8" fill="rgba(62,207,142,0.06)" stroke="rgba(62,207,142,0.4)"/>
+  <text x="335" y="132" text-anchor="middle" fill="#5ff0ab" font-family="sans-serif" font-weight="700" font-size="13">API Gateway</text>
+  <text x="335" y="154" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="monospace" font-size="11">HTTP API v2</text>
+  <text x="335" y="176" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="10">Sub-millisecond</text>
+
+  <!-- Arrow 2 -->
+  <path d="M 405 155 L 460 155" stroke="#3ecf8e" stroke-width="2"/>
+  <polygon points="460,151 468,155 460,159" fill="#3ecf8e"/>
+
+  <!-- Lambda -->
+  <rect x="470" y="95" width="130" height="120" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="535" y="132" text-anchor="middle" fill="#f4f6f8" font-family="sans-serif" font-weight="600" font-size="13">AWS Lambda</text>
+  <text x="535" y="154" text-anchor="middle" fill="#3ecf8e" font-family="monospace" font-size="11">Python 3.12</text>
+  <text x="535" y="176" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="10">301 Redirect</text>
+
+  <!-- Arrow 3 -->
+  <path d="M 600 155 L 640 155" stroke="#3ecf8e" stroke-width="2" stroke-dasharray="4 2"/>
+  <polygon points="640,151 648,155 640,159" fill="#3ecf8e"/>
+
+  <!-- DynamoDB -->
+  <rect x="650" y="105" width="90" height="100" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.15)"/>
+  <text x="695" y="145" text-anchor="middle" fill="#f4f6f8" font-family="sans-serif" font-weight="600" font-size="12">DynamoDB</text>
+  <text x="695" y="168" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="monospace" font-size="10">Key-Value</text>
+
+  <!-- Bottom Badges -->
+  <g transform="translate(70, 246)">
+    <rect width="110" height="28" rx="6" fill="rgba(62,207,142,0.12)"/>
+    <text x="55" y="18" text-anchor="middle" fill="#5ff0ab" font-family="monospace" font-size="11">SERVERLESS</text>
+    
+    <rect x="120" width="80" height="28" rx="6" fill="rgba(255,255,255,0.05)"/>
+    <text x="160" y="18" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="monospace" font-size="11">PYTHON</text>
+
+    <rect x="210" width="90" height="28" rx="6" fill="rgba(255,255,255,0.05)"/>
+    <text x="255" y="18" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="monospace" font-size="11">DYNAMODB</text>
+    
+    <text x="600" y="18" text-anchor="end" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="11">Zero Idle Cost · Autoscaling</text>
+  </g>
+</svg>

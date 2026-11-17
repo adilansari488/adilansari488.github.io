@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 336" width="800" height="336">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090f13"/>
+      <stop offset="100%" stop-color="#121a1f"/>
+    </linearGradient>
+    <pattern id="grid3" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <rect width="800" height="336" fill="url(#bg3)"/>
+  <rect width="800" height="336" fill="url(#grid3)"/>
+  <circle cx="690" cy="70" r="140" fill="#3ecf8e" opacity="0.08" filter="blur(40px)"/>
+
+  <!-- Code Frame -->
+  <rect x="40" y="32" width="720" height="272" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(62,207,142,0.25)" stroke-width="1.2"/>
+  <circle cx="68" cy="56" r="5" fill="#ff5f56"/>
+  <circle cx="86" cy="56" r="5" fill="#ffbd2e"/>
+  <circle cx="104" cy="56" r="5" fill="#27c93f"/>
+  <text x="130" y="60" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="12">github.com/adilansari488/websocket-sample-app · k8s duplex stream</text>
+
+  <!-- Client Box -->
+  <rect x="70" y="110" width="130" height="90" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.15)"/>
+  <text x="135" y="145" text-anchor="middle" fill="#f4f6f8" font-family="sans-serif" font-weight="600" font-size="14">WebSocket Client</text>
+  <text x="135" y="168" text-anchor="middle" fill="#3ecf8e" font-family="monospace" font-size="11">ws:// stream</text>
+
+  <!-- Bidirectional arrows -->
+  <path d="M 200 145 L 265 145" stroke="#3ecf8e" stroke-width="2"/>
+  <polygon points="265,141 273,145 265,149" fill="#3ecf8e"/>
+  <path d="M 273 165 L 208 165" stroke="#5ff0ab" stroke-width="2"/>
+  <polygon points="208,161 200,165 208,169" fill="#5ff0ab"/>
+
+  <!-- Ingress Controller -->
+  <rect x="275" y="95" width="140" height="120" rx="8" fill="rgba(62,207,142,0.06)" stroke="rgba(62,207,142,0.4)"/>
+  <text x="345" y="132" text-anchor="middle" fill="#5ff0ab" font-family="sans-serif" font-weight="700" font-size="13">Ingress Controller</text>
+  <text x="345" y="154" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="monospace" font-size="11">Sticky Sessions</text>
+  <text x="345" y="176" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="10">TCP Upstream</text>
+
+  <!-- Stream Arrow -->
+  <path d="M 415 155 L 475 155" stroke="#3ecf8e" stroke-width="2"/>
+  <polygon points="475,151 483,155 475,159" fill="#3ecf8e"/>
+
+  <!-- Pods -->
+  <rect x="485" y="95" width="235" height="120" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="602" y="125" text-anchor="middle" fill="#f4f6f8" font-family="sans-serif" font-weight="600" font-size="13">Kubernetes Service &amp; Pods</text>
+  
+  <rect x="500" y="140" width="95" height="58" rx="6" fill="rgba(62,207,142,0.08)" stroke="rgba(62,207,142,0.3)"/>
+  <text x="547" y="165" text-anchor="middle" fill="#5ff0ab" font-family="monospace" font-size="11">pod/ws-1</text>
+  <text x="547" y="183" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="monospace" font-size="10">200 req/s</text>
+
+  <rect x="610" y="140" width="95" height="58" rx="6" fill="rgba(62,207,142,0.08)" stroke="rgba(62,207,142,0.3)"/>
+  <text x="657" y="165" text-anchor="middle" fill="#5ff0ab" font-family="monospace" font-size="11">pod/ws-2</text>
+  <text x="657" y="183" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="monospace" font-size="10">200 req/s</text>
+
+  <!-- Bottom Badges -->
+  <g transform="translate(70, 246)">
+    <rect width="90" height="28" rx="6" fill="rgba(62,207,142,0.12)"/>
+    <text x="45" y="18" text-anchor="middle" fill="#5ff0ab" font-family="monospace" font-size="11">PYTHON</text>
+    
+    <rect x="100" width="110" height="28" rx="6" fill="rgba(255,255,255,0.05)"/>
+    <text x="155" y="18" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="monospace" font-size="11">KUBERNETES</text>
+
+    <rect x="220" width="110" height="28" rx="6" fill="rgba(255,255,255,0.05)"/>
+    <text x="275" y="18" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="monospace" font-size="11">WEBSOCKET</text>
+
+    <text x="620" y="18" text-anchor="end" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="11">Manifests &amp; Real-time Streaming</text>
+  </g>
+</svg>
